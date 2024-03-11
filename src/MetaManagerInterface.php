@@ -9,7 +9,7 @@ namespace SpipRemix\Contracts;
  *
  * @author JamesRezo <james@rezo.net>
  */
-interface MetaInterface
+interface MetaManagerInterface
 {
     /**
      * Récupérer l'ensemble des métas.

@@ -9,7 +9,7 @@ namespace SpipRemix\Contracts;
  *
  * @author JamesRezo <james@rezo.net>
  */
-trait MetaTrait
+trait MetaManagerTrait
 {
     public function __construct(
         /** @var array<string,mixed> $metas */
@@ -41,7 +41,7 @@ trait MetaTrait
         $this->metas = [];
     }
 
-    public function delete(string $name): void
+    public function unset(string $name): void
     {
         unset($this->metas[$name]);
     }
