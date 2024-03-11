@@ -1,51 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SpipRemix\Contracts;
 
 /**
- * Undocumented interface.
+ * Gestion des métas de SPIP.
  *
  * @author JamesRezo <james@rezo.net>
  */
 interface MetaInterface
 {
     /**
-     * Undocumented function.
+     * Récupérer l'ensemble des métas.
      *
      * @return array<string,mixed>
      */
     public function all(): array;
 
     /**
-     * Undocumented function.
-     *
-     * @param string $meta
-     * @param mixed $default
-     * @return mixed
+     * Récupérer la valeur méta pour une clé donnée,
+     * avec une valeur par défaut au besoin.
      */
-    public function read(string $meta, mixed $default = null): mixed;
+    public function get(string $name, mixed $default = null): mixed;
 
     /**
-     * Undocumented function.
-     *
-     * @param string $meta
-     * @param mixed $value
-     * @return void
+     * Affecter une valeur à une clé donnée.
      */
-    public function write(string $meta, mixed $value = null): void;
+    public function set(string $name, mixed $value = null): void;
 
     /**
-     * Undocumented function.
-     *
-     * @return void
+     * Effacer toutes les métas.
      */
-    public function truncate(): void;
+    public function clear(): void;
 
     /**
-     * Undocumented function.
-     *
-     * @param string $meta
-     * @return void
+     * Effacer la méta donnée.
      */
-    public function delete(string $meta): void;
+    public function unset(string $name): void;
 }

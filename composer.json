@@ -1,6 +1,6 @@
 {
     "name": "spip-remix/contracts",
-    "description": "Contrats d'interface communs à SPIP",
+    "description": "Contrats d'interface de SPIP",
     "type": "library",
     "license": "MIT",
     "autoload": {

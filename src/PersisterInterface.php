@@ -11,8 +11,6 @@ interface PeristerInterface
 {
     public function quote();
 
-    public function query();
-
     public function count();
 
     public function select();
