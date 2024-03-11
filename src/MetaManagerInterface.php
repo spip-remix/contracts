@@ -27,7 +27,7 @@ interface MetaManagerInterface
     /**
      * Affecter une valeur à une clé donnée.
      */
-    public function set(string $name, mixed $value = null): void;
+    public function set(string $name, mixed $value = null, bool $importable = false): void;
 
     /**
      * Effacer toutes les métas.

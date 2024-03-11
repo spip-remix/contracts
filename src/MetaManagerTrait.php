@@ -13,7 +13,9 @@ trait MetaManagerTrait
 {
     public function __construct(
         /** @var array<string,mixed> $metas */
-        private array $metas = []
+        private array $metas = [],
+        /** @var array<string,bool> $metas */
+        private array $importables = [],
     ) {
     }
 
@@ -31,28 +33,35 @@ trait MetaManagerTrait
         return $default;
     }
 
-    public function set(string $name, mixed $value = null): void
+    public function set(string $name, mixed $value = null, bool $importable = false): void
     {
         $this->metas[$name] = $value;
+        $this->importables[$name] = $importable;
     }
 
     public function clear(): void
     {
         $this->metas = [];
+        $this->importables = [];
     }
 
     public function unset(string $name): void
     {
         unset($this->metas[$name]);
+        unset($this->importables[$name]);
     }
 
     public function __serialize(): array
     {
-        return $this->metas;
+        return [
+            'metas' => $this->metas,
+            'importables' => $this->importables
+        ];
     }
 
     public function __unserialize(array $data): void
     {
-        $this->metas = $data;
+        $this->metas = $data['metas'];
+        $this->importables = $data['importables'];
     }
 }
