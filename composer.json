@@ -1,0 +1,18 @@
+{
+    "name": "spip-remix/contracts",
+    "description": "Contrats d'interface communs à SPIP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SpipRemix\\Contracts\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JamesRezo",
+            "email": "james@rezo.net"
+        }
+    ],
+    "require": {}
+}
