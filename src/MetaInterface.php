@@ -12,6 +12,13 @@ interface MetaInterface
     /**
      * Undocumented function.
      *
+     * @return array<string,mixed>
+     */
+    public function all(): array;
+
+    /**
+     * Undocumented function.
+     *
      * @param string $meta
      * @param mixed $default
      * @return mixed
