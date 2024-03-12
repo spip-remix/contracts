@@ -14,7 +14,7 @@ interface MetaManagerInterface
     /**
      * Récupérer l'ensemble des métas.
      *
-     * @return array<string,mixed>
+     * @return array<array{name:string,value:mixed,importable:bool}>
      */
     public function all(): array;
 

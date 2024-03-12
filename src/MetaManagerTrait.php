@@ -21,7 +21,13 @@ trait MetaManagerTrait
 
     public function all(): array
     {
-        return $this->metas;
+        $metas = [];
+
+        foreach ($this->metas as $name => $value) {
+            $metas[] = ['nom' => $name, 'valeur' => $value, 'importable' => $this->importables[$name]];
+        }
+
+        return $metas;
     }
 
     public function get(string $name, mixed $default = null): mixed
