@@ -9,19 +9,19 @@ namespace SpipRemix\Contracts;
  */
 interface PeristerInterface
 {
-    public function quote();
+    public function quote(): void;
 
-    public function count();
+    public function count(): void;
 
-    public function select();
+    public function select(): void;
 
-    public function fetch();
+    public function fetch(): void;
 
-    public function insert();
+    public function insert(): void;
 
-    public function update();
+    public function update(): void;
 
-    public function delete();
+    public function delete(): void;
 
-    public function free();
+    public function free(): void;
 }

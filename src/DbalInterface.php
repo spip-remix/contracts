@@ -9,7 +9,10 @@ namespace SpipRemix\Contracts;
  */
 interface DbalInterface
 {
-    public function createOrUpdate($table, array $data);
+    /**
+     * @param array<string,mixed> $data
+     */
+    public function createOrUpdate(string $table, array $data): void;
 
-    public function drop(string $table);
+    public function drop(string $table): void;
 }
