@@ -10,11 +10,14 @@ class TestCase extends FrameworkTestCase
 {
     public function getMetaManagerMock()
     {
-        return new MetaManagerMock([
+        $mock = new MetaManagerMock([
             'dummy' => 'test',
         ], [
             'dummy' => true,
         ]);
+        $mock->setLogger(\spip_logger());
+
+        return $mock;
     }
 
     /**

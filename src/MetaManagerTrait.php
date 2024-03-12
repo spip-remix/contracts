@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace SpipRemix\Contracts;
 
+use Psr\Log\LoggerAwareTrait;
+use Psr\Log\LoggerInterface;
+
 /**
  * Trait pour mise en commun de la gestion des métas.
  *
@@ -11,12 +14,19 @@ namespace SpipRemix\Contracts;
  */
 trait MetaManagerTrait
 {
+    use LoggerAwareTrait;
+
     public function __construct(
         /** @var array<string,mixed> $metas */
         private array $metas = [],
         /** @var array<string,bool> $metas */
         private array $importables = [],
     ) {
+    }
+
+    public function getLogger(): ?LoggerInterface
+    {
+        return $this->logger;
     }
 
     public function all(): array

@@ -3,6 +3,7 @@
 namespace SpipRemix\Contracts\Test;
 
 use PHPUnit\Framework\Attributes\CoversClass;
+use Psr\Log\LoggerInterface;
 use SpipRemix\Contracts\MetaManagerInterface;
 use SpipRemix\Contracts\MetaManagerTrait;
 
@@ -99,5 +100,10 @@ class MetaManagerTraitTest extends TestCase
 
         // Then
         $this->assertNull($this->metaManager->get('new'));
+    }
+
+    public function testGetLogger(): void
+    {
+        $this->assertInstanceOf(LoggerInterface::class, $this->metaManager->getLogger());
     }
 }

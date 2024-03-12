@@ -4,13 +4,21 @@ declare(strict_types=1);
 
 namespace SpipRemix\Contracts;
 
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerInterface;
+
 /**
  * Gestion des métas de SPIP.
  *
  * @author JamesRezo <james@rezo.net>
  */
-interface MetaManagerInterface
+interface MetaManagerInterface extends LoggerAwareInterface
 {
+    /**
+     * @internal Pour transmettre le logger associé à un autre objet.
+     */
+    public function getLogger(): ?LoggerInterface;
+
     /**
      * Récupérer l'ensemble des métas.
      *
