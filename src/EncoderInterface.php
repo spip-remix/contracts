@@ -18,7 +18,7 @@ interface EncoderInterface
      *
      * @return string|null null si la valeur n'est pas encodable.
      */
-    public function encode(mixed $decoded): ?string; // Stringable|string $encoded ?
+    public function encode(mixed $decoded): ?string;
 
     /**
      * Décode une chaîne de carctères en valeur d'origine.

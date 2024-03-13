@@ -15,6 +15,11 @@ use Psr\Log\LoggerInterface;
 interface MetaManagerInterface extends LoggerAwareInterface
 {
     /**
+     * Démarrage du MetaManager.
+     */
+    public function boot(): void;
+
+    /**
      * @internal Pour transmettre le logger associé à un autre objet.
      */
     public function getLogger(): ?LoggerInterface;
@@ -22,7 +27,7 @@ interface MetaManagerInterface extends LoggerAwareInterface
     /**
      * Récupérer l'ensemble des métas.
      *
-     * @return array<array{name:string,value:mixed,importable:bool}>
+     * @return array<array{name:non-empty-string,value:mixed,importable:bool}>
      */
     public function all(): array;
 

@@ -9,17 +9,12 @@
             "email": "james@rezo.net"
         }
     ],
-    "require-dev": {
-        "spip-remix/sdk": "^0.1.x-dev"
+    "require": {
+        "psr/log": "^3.0"
     },
     "autoload": {
         "psr-4": {
             "SpipRemix\\Contracts\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "SpipRemix\\Contracts\\Test\\": "tests/"
         }
     }
 }
