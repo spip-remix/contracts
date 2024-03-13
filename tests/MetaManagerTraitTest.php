@@ -20,7 +20,11 @@ class MetaManagerTraitTest extends TestCase
     public function testAll(): void
     {
         // Given
-        $expected = 'a:1:{i:0;a:3:{s:3:"nom";s:5:"dummy";s:6:"valeur";s:4:"test";s:10:"importable";b:1;}}';
+        $expected = 'a:1:{i:0;a:3:{'
+            . 's:3:"nom";s:5:"dummy";'
+            . 's:6:"valeur";s:4:"test";'
+            . 's:10:"importable";b:1;'
+            . '}}';
 
         // When
         $actual = \serialize($this->metaManager->all());
@@ -32,8 +36,10 @@ class MetaManagerTraitTest extends TestCase
     public function testSerialization(): void
     {
         // Given
-        $expected = 'O:44:"SpipRemix\Component\Sdk\Mock\MetaManagerMock":'
-            . '2:{s:5:"metas";a:1:{s:5:"dummy";s:4:"test";}s:11:"importables";a:1:{s:5:"dummy";b:1;}}';
+        $expected = 'O:44:"SpipRemix\Component\Sdk\Mock\MetaManagerMock":2:{'
+            . 's:5:"metas";a:1:{s:5:"dummy";s:4:"test";}'
+            . 's:11:"importables";a:1:{s:5:"dummy";b:1;}'
+            . '}';
         /** @var MetaManagerInterface $metas */
         $metas = \unserialize($expected);
         $expectedDummy = 'test';

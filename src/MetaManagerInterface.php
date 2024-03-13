@@ -35,7 +35,7 @@ interface MetaManagerInterface extends LoggerAwareInterface
     /**
      * Affecter une valeur à une clé donnée.
      */
-    public function set(string $name, mixed $value = null, bool $importable = false): void;
+    public function set(string $name, mixed $value = null, bool $importable = true): void;
 
     /**
      * Effacer toutes les métas.

@@ -49,7 +49,7 @@ trait MetaManagerTrait
         return $default;
     }
 
-    public function set(string $name, mixed $value = null, bool $importable = false): void
+    public function set(string $name, mixed $value = null, bool $importable = true): void
     {
         $this->metas[$name] = $value;
         $this->importables[$name] = $importable;
