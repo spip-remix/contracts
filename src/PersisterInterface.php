@@ -7,7 +7,7 @@ namespace SpipRemix\Contracts;
  *
  * @author JamesRezo <james@rezo.net>
  */
-interface PeristerInterface
+interface PersisterInterface
 {
     public function quote(): void;
 
