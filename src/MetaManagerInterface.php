@@ -16,29 +16,32 @@ interface MetaManagerInterface extends LoggerAwareInterface
 {
     /**
      * Démarrage du MetaManager.
+     *
+     * @throws ExceptionInterface Si le démarrage du MetaManager n'est pas possible.
      */
     public function boot(): void;
 
     /**
-     * @internal Pour transmettre le logger associé à un autre objet.
+     * {@internal Pour transmettre le logger associé éventuel à un autre objet
+     * (ex: Décorateur).}
      */
     public function getLogger(): ?LoggerInterface;
 
     /**
      * Récupérer l'ensemble des métas.
      *
-     * @return array<array{name:non-empty-string,value:mixed,importable:bool}>
+     * @return list<array{name:non-empty-string,value:mixed,importable:bool}>
      */
     public function all(): array;
 
     /**
-     * Récupérer la valeur méta pour une clé donnée,
+     * Récupérer la valeur pour une méta donnée,
      * avec une valeur par défaut au besoin.
      */
     public function get(string $name, mixed $default = null): mixed;
 
     /**
-     * Affecter une valeur à une clé donnée.
+     * Affecter une valeur à une méta donnée.
      */
     public function set(string $name, mixed $value = null, bool $importable = true): void;
 

@@ -1,9 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SpipRemix\Contracts;
 
 /**
- * Encodage/Décodage.
+ * Encodage/Décodage de valeurs vers ou depuis une chaîne de caractères.
+ *
+ * Sérialisation/Normalisation basée sur différents formats selon l'implémentation.
  *
  * @template T
  *
@@ -12,20 +16,22 @@ namespace SpipRemix\Contracts;
 interface EncoderInterface
 {
     /**
-     * Encode une valeur en chaîne de carctères.
+     * Encode une valeur en chaîne de caractères.
      *
      * @param T $decoded
      *
-     * @return string|null null si la valeur n'est pas encodable.
+     * @throws ExceptionInterface si l'encodage de la valeur n'est pas possible.
      */
-    public function encode(mixed $decoded): ?string;
+    public function encode(mixed $decoded): string;
 
     /**
-     * Décode une chaîne de carctères en valeur d'origine.
+     * Décode une chaîne de caractères en valeur d'origine.
      *
-     * @param string $encoded cast implicite des numériques et des booléens.
+     * @param string $encoded (cast implicite des numériques et des booléens.)
      *
-     * @return T|null null si la chaîne n'est pas décodable
+     * @throws ExceptionInterface si le décodage de la chaîne n'est pas possible.
+     *
+     * @todo return T
      */
     public function decode(string $encoded): mixed;
 }
