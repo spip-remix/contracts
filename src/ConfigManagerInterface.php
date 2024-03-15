@@ -7,6 +7,4 @@ namespace SpipRemix\Contracts;
  *
  * @author JamesRezo <james@rezo.net>
  */
-interface ConfigManagerInterface extends MetaManagerInterface
-{
-}
+interface ConfigManagerInterface extends MetaManagerInterface {}
