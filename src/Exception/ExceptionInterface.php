@@ -14,7 +14,7 @@ interface ExceptionInterface extends \Throwable
     /**
      * Instancie une exception à lancer.
      *
-     * @param array<int|float|string> $context liste de valeurs scalaires (int, float, string)
+     * @param int|float|string $context liste de valeurs scalaires (int, float, string)
      * à préciser dans chaque implémentation.
      *
      * Exemple:
@@ -35,5 +35,5 @@ interface ExceptionInterface extends \Throwable
      * }
      * ```
      */
-    public static function with(array ...$context): static;
+    public static function with(int|float|string ...$context): static;
 }
