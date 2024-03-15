@@ -33,7 +33,7 @@ interface EncoderInterface
      *
      * @throws ExceptionInterface si le décodage de la chaîne n'est pas possible.
      *
-     * @todo return T
+     * @return T
      */
     public function decode(string $encoded): mixed;
 }
