@@ -5,16 +5,17 @@ declare(strict_types=1);
 namespace SpipRemix\Contracts\Exception;
 
 /**
- * Contrat d'interface pour les exceptions SPIP.
+ * Contrat d'interface pour les exceptions de SPIP
+ * ou de ses plugins/composants.
  *
  * @author JamesRezo <james@rezo.net>
  */
 interface ExceptionInterface extends \Throwable
 {
     /**
-     * Instancie une exception à lancer.
+     * Instancie une exception et la lance.
      *
-     * @param int|float|string $context liste de valeurs scalaires (int, float, string)
+     * @param string $context liste de valeurs scalaires (null, bool, int, float, string)
      * à préciser dans chaque implémentation.
      *
      * Exemple:
@@ -29,11 +30,14 @@ interface ExceptionInterface extends \Throwable
      *
      * Usage:
      *
+     * MyException implémente ExceptionInterface
+     * et produit un message "Une erreur s\'est produite avec le message "%s".
+     *
      * ```php
      * if ($condition) {
-     *     throw MyException::with('texte d\'erreur'); // 'Une erreur s\'est produite avec le message "texte d\'erreur".'
+     *     MyException::throw('texte d\'erreur'); // 'Une erreur s\'est produite avec le message "texte d\'erreur".'
      * }
      * ```
      */
-    public static function with(int|float|string ...$context): static;
+    public static function throw(string ...$context): static;
 }
