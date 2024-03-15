@@ -6,6 +6,7 @@ namespace SpipRemix\Contracts;
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
+use SpipRemix\Contracts\Exception\ExceptionInterface;
 
 /**
  * Gestion des métas de SPIP.

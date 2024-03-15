@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace SpipRemix\Contracts;
 
+use SpipRemix\Contracts\Exception\ExceptionInterface;
+
 /**
  * Encodage/Décodage de valeurs vers ou depuis une chaîne de caractères.
  *
