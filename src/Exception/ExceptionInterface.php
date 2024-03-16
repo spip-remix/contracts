@@ -6,29 +6,31 @@ namespace SpipRemix\Contracts\Exception;
 
 /**
  * Contrat d'interface pour les exceptions de SPIP
- * ou de ses plugins/composants.
+ * ou de ses plugins ou composants.
  *
  * @author JamesRezo <james@rezo.net>
  */
 interface ExceptionInterface extends \Throwable
 {
     /**
-     * Instancie une exception et la lance.
+     * Instancier une exception et la lancer.
      *
      * Usage:
      *
      * MyException implémente ExceptionInterface
-     * et produit un message: Une erreur s'est produite avec le message "%s".
+     * et produit le message: Une erreur s'est produite (%s).
      *
      * ```php
      * if ($condition) {
      *     MyException::throw('texte d\'erreur');
-     *     // -> Une erreur s'est produite avec le message "texte d'erreur".
+     *     // -> Une erreur s'est produite (texte d'erreur).
      * }
      * ```
      *
-     * @param string $context liste de valeurs scalaires (null, bool, int, float, string)
-     * à préciser dans chaque implémentation.
+     * @param string $context liste de valeurs scalaires
+     * Toute valeur scalaire (bool, int, float, string) est valide
+     * Le contenu, le type et l'ordre des valeurs sera à préciser
+     * dans chaque implémentation.
      */
     public static function throw(string ...$context): static;
 }

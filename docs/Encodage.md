@@ -32,9 +32,11 @@ et/ou d'autres lib[^1], comme, par exemple, [league/csv](https://csv.thephpleagu
 
 ## Contrat d'interface
 
-- `encode(mixed $decoded): ?string`  Renvoie une chaîne de caractères représentant la valeur passée en paramètre ou `null` si l'encodage n'est pas possible
+- `encode(mixed $decoded): ?string`
+  - Renvoie une chaîne de caractères représentant la valeur passée en paramètre ou `null` si l'encodage n'est pas possible
   - On peut remplacer le retour `null` par le lancement d'une Exception ...
-- `decode(string $encoded): mixed` Renvoie une valeur décodée depuis une chaîne de caractères passée en paramètre
+- `decode(string $encoded): mixed`
+  - Renvoie une valeur décodée depuis une chaîne de caractères passée en paramètre
 
 ## Notes
 

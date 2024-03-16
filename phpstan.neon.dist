@@ -6,3 +6,5 @@ parameters:
     paths:
         - src
     level: max
+    typeAliases:
+        Meta: 'array{name:non-empty-string,value:mixed,importable?:bool,timestamp?:?positive-int}'
