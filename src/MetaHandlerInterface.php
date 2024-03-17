@@ -61,10 +61,10 @@ interface MetaHandlerInterface
     /**
      * Vider toutes les métas.
      */
-    public function clean(): void;
+    public function clean(): bool;
 
     /**
      * Effacer une méta donnée.
      */
-    public function erase(string $name): void;
+    public function erase(string $name): bool;
 }
