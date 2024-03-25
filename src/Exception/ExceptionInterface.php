@@ -27,10 +27,11 @@ interface ExceptionInterface extends \Throwable
      * }
      * ```
      *
-     * @param string $context liste de valeurs scalaires
+     * @param string[]|string|bool $context liste de valeurs scalaires
+     * ou tableau de chaînes de caractères.
      * Toute valeur scalaire (bool, int, float, string) est valide
      * Le contenu, le type et l'ordre des valeurs sera à préciser
      * dans chaque implémentation.
      */
-    public static function throw(string ...$context): static;
+    public static function throw(array|string|bool ...$context): never;
 }
